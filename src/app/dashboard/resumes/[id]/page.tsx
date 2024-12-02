@@ -1,7 +1,7 @@
-import React from 'react'
+import { Resume } from './_components/resume'
 
 const ResumeDetailPage = () => {
-  return <div>ResumeDetailPage</div>
+  return <Resume />
 }
 
 export default ResumeDetailPage
