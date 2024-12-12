@@ -27,6 +27,14 @@ export const Resume = () => {
         phone: '',
         website: '',
       },
+      certifications: [],
+      educations: [],
+      experiences: [],
+      languages: [],
+      projects: [],
+      skills: [],
+      socialMedias: [],
+      summary: '',
     },
   }
   const methods = useForm<ResumeData>({
