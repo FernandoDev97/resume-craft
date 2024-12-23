@@ -1,3 +1,23 @@
+type ResumeLanguages =
+  | 'english'
+  | 'spanish'
+  | 'french'
+  | 'german'
+  | 'italian'
+  | 'portuguese'
+
+type ResumeTemplates = 'eevee' | 'onix' | 'jynx' | 'ditto'
+
+type ResumeSections =
+  | 'summary'
+  | 'socialMedias'
+  | 'experiences'
+  | 'educations'
+  | 'skills'
+  | 'languages'
+  | 'certifications'
+  | 'projects'
+
 type ResumeImageData = {
   url: string
   visible: boolean
@@ -80,6 +100,24 @@ type ResumeContentData = {
   projects: Partial<ResumeProjectData>[]
 }
 
+type ResumeLayoutSection = {
+  id?: string
+  key: ResumeSections
+}
+
+type ResumeStructureData = {
+  template: ResumeTemplates
+  colorTheme: string
+  layout: {
+    mainSections: ResumeLayoutSection[]
+    sidebarSections: ResumeLayoutSection[]
+  }
+  language: ResumeLanguages
+}
+
 type ResumeData = {
   content: ResumeContentData
+  structure: ResumeStructureData
 }
+
+type AIGenerationMode = 'JOB_TITLE' | 'FIX_CONTENT' | 'TRANSLATE_CONTENT'

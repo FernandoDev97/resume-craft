@@ -1,10 +1,9 @@
 import { UserRound } from 'lucide-react'
 import React from 'react'
 
+import { SectionTitle } from '@/components/common/section-title'
 import { InputField } from '@/components/ui/input/field'
 import { SwitchField } from '@/components/ui/switch/field'
-
-import { SectionTitle } from '../section-title'
 
 export const BasicInfoSection = () => {
   return (

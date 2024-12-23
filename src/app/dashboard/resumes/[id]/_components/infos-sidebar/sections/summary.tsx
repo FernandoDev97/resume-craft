@@ -3,7 +3,7 @@ import { Controller, useFormContext } from 'react-hook-form'
 
 import { Editor } from '@/components/ui/editor'
 
-import { SectionTitle } from '../section-title'
+import { SectionTitle } from '../../../../../../../components/common/section-title'
 
 export const SummarySection = () => {
   const { control } = useFormContext()
