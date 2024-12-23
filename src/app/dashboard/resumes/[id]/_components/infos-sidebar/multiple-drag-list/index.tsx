@@ -7,11 +7,10 @@ import {
 import { GripVertical, LucideIcon, Plus } from 'lucide-react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
 
+import { SectionTitle } from '@/components/common/section-title'
 import { Button } from '@/components/ui/button'
 import { Tooltip } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-
-import { SectionTitle } from '../section-title'
 
 export type ResumeArrayKeys = Exclude<
   keyof ResumeContentData,

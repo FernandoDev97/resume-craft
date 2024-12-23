@@ -36,6 +36,22 @@ export const Resume = () => {
       socialMedias: [],
       summary: '',
     },
+    structure: {
+      template: 'ditto',
+      colorTheme: 'slate',
+      language: 'portuguese',
+      layout: {
+        mainSections: [
+          { key: 'socialMedias' },
+          { key: 'summary' },
+          { key: 'experiences' },
+          { key: 'educations' },
+          { key: 'certifications' },
+          { key: 'projects' },
+        ],
+        sidebarSections: [{ key: 'skills' }, { key: 'languages' }],
+      },
+    },
   }
   const methods = useForm<ResumeData>({
     defaultValues,
