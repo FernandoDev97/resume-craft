@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/resizable'
 
 import { InfosSidebar } from './infos-sidebar'
-import { ResumeContent } from './resume-content'
+import { ResumeContent } from './resume-content/index.'
 import { StructureSidebar } from './structure-sidebar'
 
 export const Resume = () => {
