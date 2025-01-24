@@ -2,6 +2,8 @@
 
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 
+import { TransformControls } from './controls'
+import { NavigationHeader } from './header'
 import { ResumeTemplate } from './templates'
 export const ResumeContent = () => {
   return (
@@ -14,6 +16,8 @@ export const ResumeContent = () => {
         limitToBounds={false}
       >
         <>
+          <NavigationHeader title="Teste" />
+          <TransformControls title="teste" />
           <TransformComponent>
             <ResumeTemplate />
           </TransformComponent>

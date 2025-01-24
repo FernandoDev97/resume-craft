@@ -7,13 +7,13 @@ import { useResumeDownload } from '@/hooks/use-resume-download'
 import { cn } from '@/lib/utils'
 
 type TransformControlsProps = {
-  title: string
+  title?: string
 }
 
 export const TransformControls = ({ title }: TransformControlsProps) => {
   const { zoomIn, zoomOut, centerView } = useControls()
 
-  const { handleDownloadResume, isLoading } = useResumeDownload(title)
+  // const { handleDownloadResume, isLoading } = useResumeDownload(title)
 
   const controls = [
     {
@@ -31,12 +31,12 @@ export const TransformControls = ({ title }: TransformControlsProps) => {
       label: 'Resetar posição',
       onClick: () => centerView(0.5),
     },
-    {
-      icon: Download,
-      label: 'Baixar PDF',
-      onClick: () => handleDownloadResume(),
-      disabled: isLoading,
-    },
+    // {
+    //   icon: Download,
+    //   label: 'Baixar PDF',
+    //   onClick: () => handleDownloadResume(),
+    //   disabled: isLoading,
+    // },
   ]
 
   return (
