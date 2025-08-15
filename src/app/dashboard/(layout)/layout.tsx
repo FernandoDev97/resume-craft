@@ -1,15 +1,19 @@
+import { User } from 'next-auth'
 import { ReactNode } from 'react'
 
 import Logo from '@/assets/logo.svg'
 import { ModeToggle } from '@/components/common/mode-toggle'
 import { NavItems } from '@/components/common/nav-items'
 import { UserDropdown } from '@/components/common/user-dropdown'
+import { auth } from '@/lib/auth'
 
 interface DashboardLayourtProps {
   children: ReactNode
 }
 
-const DashboardLayourt = ({ children }: DashboardLayourtProps) => {
+const DashboardLayourt = async ({ children }: DashboardLayourtProps) => {
+  const session = await auth()
+
   return (
     <div className="w-full h-screen overflow-hidden grid grid-cols-[300px,1fr]">
       <aside className="w-full h-full flex flex-col items-center border-r border-muted ">
@@ -18,7 +22,7 @@ const DashboardLayourt = ({ children }: DashboardLayourtProps) => {
         </div>
         <NavItems />
         <div className="w-full mt-auto border-t border-muted px-3 py-4 flex items-center justify-between gap-2">
-          <UserDropdown />
+          <UserDropdown user={session?.user as User} />
           <ModeToggle />
         </div>
       </aside>

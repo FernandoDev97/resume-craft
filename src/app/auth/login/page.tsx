@@ -4,18 +4,19 @@ import { FaChrome, FaGithub } from 'react-icons/fa'
 import Logo from '@/assets/logo.svg'
 import { ModeToggle } from '@/components/common/mode-toggle'
 import { Button } from '@/components/ui/button'
-// import { signIn } from '@/lib/auth'
+import { signIn } from '@/lib/auth'
 
-// type Providers = 'github' | 'google'
+type Providers = 'github' | 'google'
 
 export default function LoginPage() {
-  // const handleLogin = async (form: FormData) => {
-  //   'use server'
+  const handleLogin = async (form: FormData) => {
+    'use server'
 
-  //   const provider = form.get('provider') as Providers
+    const provider = form.get('provider') as Providers
+    console.log(provider)
 
-  //   await signIn(provider, { redirectTo: '/dashboard/resumes' })
-  // }
+    await signIn(provider, { redirectTo: '/dashboard/resumes' })
+  }
 
   return (
     <div className="grid grid-cols-[1.5fr,1fr] h-screen">
@@ -30,7 +31,11 @@ export default function LoginPage() {
         />
       </aside>
 
-      <form className="p-10 flex justify-center flex-col">
+      <form
+        className="p-10 flex justify-center flex-col"
+        action={handleLogin}
+        method="POST"
+      >
         <div className="flex items-center justify-between mb-10">
           <Logo className="max-w-[90px]" />
 
