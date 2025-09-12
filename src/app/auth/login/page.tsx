@@ -31,11 +31,7 @@ export default function LoginPage() {
         />
       </aside>
 
-      <form
-        className="p-10 flex justify-center flex-col"
-        action={handleLogin}
-        method="POST"
-      >
+      <form className="p-10 flex justify-center flex-col" action={handleLogin}>
         <div className="flex items-center justify-between mb-10">
           <Logo className="max-w-[90px]" />
 
